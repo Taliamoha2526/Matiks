@@ -34,7 +34,3 @@ def json_to_dataframe(data):
     df.columns = df.columns.str.replace('.', '_')
     return df.T
 
-# Example usage
-filename, data = save_json_from_url(url)   # download + save
-df = json_to_dataframe(data)               # convert to DataFrame
-print(df.head())
