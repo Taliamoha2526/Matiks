@@ -1,4 +1,4 @@
-from private import *
+from private import url
 from data_extraction.get_data import *
 from data_extraction.process_data import *
 from analysis.stats import *

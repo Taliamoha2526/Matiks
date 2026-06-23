@@ -1,11 +1,8 @@
-url = "https://storage.googleapis.com/matiks-go/gdpr-exports/6936a339a3957ac5bea63d6a/20260620_110434_gdpr_export.json?" + \
-       "X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-uzv5x%40matiks-go.iam.gserviceaccount.com" + \
-"%2F20260620%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260620T110435Z&X-Goog-Expires=604799&X" + \
-       "-Goog-Signature=207baf3b7b28659c41608950118f58137a3a49ba34abeb0a138c463fff800cd1ebfbde2da2eac5489" + \
-       "f4a174a603ffac59e0b8c90f2385a5ebe38fb8e5768480a071fa2abda148f" + \
-       "90d849e493edce51bb949286a68858ea236766614d7c6371c299b70640cd0" + \
-       "e0c96b89a731c9e9bce3603a7b5429fdcfcd0e40ee06f0dda2fcce53bf1a4fd0e5968253c" + \
-       "060cc3fba8dcf521f1a99e3ba9aa8b0bbd19246286f5c556c2978c0b82e12568eed6320ce054" + \
-       "ce2511e5d452cccc24b6073131007fc1801d4821209dfb6d522c5176d1ae15734f0b4b2e" + \
-       "94c1dd44efc6bf8623e82a2f358f9eba2b9f6cc6315d6697faf1ba3100587567a33a3e210651" + \
-       "f4831dc23ecc&X-Goog-SignedHeaders=host"
+url = "https://storage.googleapis.com/matiks-go/gdpr-exports/6936a339a3957ac5bea63d6a/20260622_012227_gdpr_export.json?" +\
+      "X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-uzv5x%40matiks-go.iam.gserviceaccount.com%" +\
+      "2F20260622%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260622T012228Z&X-Goog-Expires=604799&X" +\
+      "-Goog-Signature=1ce116c0a64cfc2396f1ecc37e06795684fd0769cd8cdcd517339e0c77a7d7c7b5658840e210d1fe2a68aa24c514b6e4fb8" +\
+      "fc11571c26fffa800f08e0085b46aa5609c70187bdfc505742074492eaf544dd512332b5d8b8a1e436e16efd429c57c7a6e7b59a1b8b98fb5f83" +\
+      "4c741890367db4dbe95954766eaa0db9ac272f7848b4bc6770b8a44fe6910a9b3e1196eaa88db1d7cef35fbf0b50516c9bffc06b1e2530b8427cfc35" +\
+      "551919d5f614c2e3c2e1473e34e055ae8368ca3101fdeb08393a789b7cebd37ca302d37151291c8164cfb26c49b5b06c78a983a1d500521aaa074" +\
+      "11ef282042ee17e772dee5614b623c198b87e1cb57a1de0927190a3a9750&X-Goog-SignedHeaders=host"
