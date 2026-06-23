@@ -1,4 +1,4 @@
-url = "https://storage.googleapis.com/matiks-go/gdpr-exports/6936a339a3957ac5bea63d6a/20260622_012227_gdpr_export.json?" +\
+link = "https://storage.googleapis.com/matiks-go/gdpr-exports/6936a339a3957ac5bea63d6a/20260622_012227_gdpr_export.json?" +\
       "X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=firebase-adminsdk-uzv5x%40matiks-go.iam.gserviceaccount.com%" +\
       "2F20260622%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260622T012228Z&X-Goog-Expires=604799&X" +\
       "-Goog-Signature=1ce116c0a64cfc2396f1ecc37e06795684fd0769cd8cdcd517339e0c77a7d7c7b5658840e210d1fe2a68aa24c514b6e4fb8" +\
