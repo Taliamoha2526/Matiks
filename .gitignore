@@ -1,0 +1,7 @@
+private.py
+.venv/
+venv/
+.idea/
+data/
+plots/
+stats/

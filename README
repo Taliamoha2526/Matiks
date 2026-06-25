@@ -1,0 +1,61 @@
+Matiks Analytics and Prediction Pipeline
+*Please note I am not a Matiks employee nor is this an official application developed by them, this is my own attempt of creating a unique personal machine learning project that supports a cause I believe in and support.
+Welcome to the ultimate data companion for Matiks competitive players and brain sports athletes!
+
+In a game where milliseconds matter and cognitive fatigue is the enemy, intuition isn't enough. This project is built by a player, for players, to turn raw match logs into actionable performance insights. Whether you want to analyze your speed degradation over long sessions, track your accuracy trends across different operation types, or predict your peak performance windows, this tool aims to map it all out.
+
+Project Status: Alpha / Initial End-to-End Success. Great news: The engine works! The code successfully runs end-to-end, fetching data, processing metrics, and spitting out predictive models. The catch? It’s currently unoptimized and raw. I am opening this repository to the Matiks community early so we can break it, stress-test it against different player profiles, log errors, and build the ultimate open-source analytics toolkit for our sport.
+
+What This Tool Analyzes
+Speed and Accuracy Matrices: Visualizes the game history, to plot the rating progression in different modes and stores some descriptive statistics.
+
+The Bot Factor: Utilizes the games against bots data, to possibly identify other bots, and evaluate performance against them.
+
+Predictive Performance: Uses machine learning within the prediction pipeline and a from scratch model to predict game result.
+
+Getting Started
+1. Prerequisites
+Make sure you have Python version 3.10 or higher installed on your computer.
+Make sure you have all the requirements with specific versions installed.
+
+2. Installation
+First, clone the repository to your local machine using git clone with the repository URL, then navigate into the newly created Matiks project directory using your terminal.
+
+3. Setting Up Your Private Data
+To protect user privacy, configuration links are kept strictly local.
+
+Create a file named private.py exactly as written in the root folder of the project. Inside this file, define your personal data URL by adding the line: link = "your_personal_data_url_link"
+
+Steps to get the link to the your private game data:
+1. Open the Matiks app and in the main window, open the tab on the lower right corner.
+2. Click the view profile on the top of the screen.
+3. Press the Options on the higher right side of the screen and navigate to Your Data.
+4. Select Request my data and add a request for the preferred timeslot.
+5. Navigate back to the previous page and into the View Past requests page where your request is being processed.
+6. Once ready, you can click the download data button which will redirect into a google storage page that contains your data.
+7. Using the share option, copy the link url of the page and use it to create the private.py file.
+
+Do not worry about accidentally sharing this; the project includes a gitignore file that ensures private.py is completely ignored by Git and will never be uploaded to GitHub.
+
+4. Running the Tool
+To test the initial end-to-end functionality and see the analytics engine in action, execute the main.py script from your command line.
+
+Help Us Test and How to Report Issues
+Since the project is in early development, you will likely encounter bugs or unhandled exceptions depending on your specific game data structure.
+
+If something breaks, please follow these steps:
+
+Head over to the Issues tab at the very top of this GitHub repository page.
+
+Click the green New Issue button.
+
+Provide a brief description of what you were doing when the application crashed or threw an error.
+
+Copy the exact error message or traceback from your terminal and paste it into the description box.
+
+Please ensure you omit, blur, or delete any highly sensitive personal tokens or data links from your error logs before posting them publicly!
+
+Next up on the development roadmap:
+1/ Model Performance and accuracy optimization.
+2/ Additional features to the analysis pipeline.
+3/ Building an enhanced CLI or possibly a small streamlit application.
