@@ -9,6 +9,9 @@ class Optimizer:
         self.v = None
         self.t = 0
     def update(self, theta, grad):
+        if np.isscalar(theta):
+            theta = np.array([theta], dtype=np.float64)
+            grad = np.array([grad], dtype=np.float64)
         if self.m is None:
             self.m = np.zeros(theta.shape)
             self.v = np.zeros(theta.shape)
@@ -17,6 +20,8 @@ class Optimizer:
         self.v = self.beta2 * self.v + (1 - self.beta2) * (grad**2)
         alphat = np.sqrt(1 - self.beta2 ** self.t) / (1 - self.beta1 ** self.t)
         theta-=  (alphat * self.m) / np.sqrt(self.v + self.epsilon)
+        if theta.size==1:
+            return theta.item()
         return theta
 class Model:
     def __init__(self, alpha, beta1, beta2, epochs):
@@ -54,8 +59,10 @@ class Model:
 
 
     def score(self, x, y):
-        correct = np.sum(x==y)
-        total = len(y)
+        y_pred = (np.array(x).reshape(-1))
+        y_true = np.array(y).reshape(-1)
+        correct = np.sum(y_pred == y_true)
+        total = len(y_true)
         return correct / total
 
 

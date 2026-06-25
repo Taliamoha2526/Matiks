@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 import matplotlib.pyplot as plt
 from pathlib import Path
 
@@ -10,28 +11,33 @@ def load_stats(file_path="data/statistics_ratingHistory.csv"):
         raise FileNotFoundError(f"{file} not found.")
     return pd.read_csv(file)
 
-def compute_stats(df, mode):
+def compute_stats(df, mode, save_dir="stats"):
     """Compute statistics for a given ratingType mode."""
     i_data = df[df['ratingType'] == mode].copy()
-    return {
-        'avg_change': np.mean(i_data['ratingChange']),
-        'w/l_ratio': np.sum(i_data['wins']) / np.sum(i_data['losses']),
-        'max_rating': np.max(i_data['rating']),
-        'min_rating': np.min(i_data['rating']),
-        'data': i_data
-    }
-def save_plot(i_data, mode, save_dir="analysis/graphs"):
+    stats={'avg_change': float(np.mean(i_data['ratingChange'])),
+        'w/l_ratio': float(np.sum(i_data['wins']) / np.sum(i_data['losses'])),
+        'max_rating': int(np.max(i_data['rating'])),
+        'min_rating': int(np.min(i_data['rating'])),
+        "count": int(len(i_data['rating']))}
+    Path(save_dir).mkdir(parents=True, exist_ok=True)
+    filename=Path(save_dir) / f"{mode.lower()}_stats.json"
+    with open (filename, "w") as f:
+        json.dump(stats, f)
+    print(f"Saved stats → {filename}")
+    return i_data
+
+def save_plot(i_data, mode, save_dir):
     """Plot rating history for a mode and save to analysis/graphs."""
     Path(save_dir).mkdir(parents=True, exist_ok=True)
 
     i_data['date'] = pd.to_datetime(i_data['date'])
     plt.figure(figsize=(8, 4))
     plt.plot(i_data['date'], i_data['rating'])
-    plt.title(f"{mode} rating")
+    plt.title(f"{mode.lower()} rating")
     plt.xlabel("Date")
     plt.ylabel("Rating")
 
-    filename = Path(save_dir) / f"{mode}_rating.png"
+    filename = Path(save_dir) / f"{mode.lower()}_rating.png"
     plt.savefig(filename, bbox_inches="tight")
     plt.close()
     print(f"Saved plot → {filename}")

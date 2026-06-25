@@ -1,4 +1,3 @@
-from get_data import df
 import pandas as pd
 import json
 from pathlib import Path
