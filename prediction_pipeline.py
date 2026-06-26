@@ -47,8 +47,6 @@ def preprocess_data(df: pd.DataFrame):
 
     # Labels must be array-like
     y = df['isWinner'].astype(int).values
-    print("CHeck1")
-    print(np.unique(y, return_counts=True))
     if not isinstance(y, np.ndarray) or y.ndim != 1:
         raise TrainingError("Labels must be a 1D NumPy array.")
 
@@ -80,10 +78,6 @@ def train_model(X, y, preprocess, alpha=0.001, beta1=0.9, beta2=0.999, epochs=50
     try:
         X_train_scaled = preprocess.fit_transform(X_train)
         X_test_scaled = preprocess.transform(X_test)
-        print("Check2")
-        print(X_train_scaled[:5])
-        print(" Check3")
-        print(X_test_scaled[:5])
     except Exception as e:
         raise TrainingError(f"Preprocessing failed: {e}")
 
@@ -95,8 +89,6 @@ def train_model(X, y, preprocess, alpha=0.001, beta1=0.9, beta2=0.999, epochs=50
 
     try:
         proba = np.array(model.predict_proba(X_test_scaled))
-        print("Check4")
-        print(proba[:10])
         if not isinstance(proba, (list, np.ndarray)):
             raise TrainingError("Model.predict_proba did not return array-like output.")
         pred = (np.array(proba) >= 0.5).astype(int)
