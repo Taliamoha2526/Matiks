@@ -51,7 +51,8 @@ class Model:
        #prediction.
        for i in range(0, self.epochs + 1):
            z = np.dot(x, self.weights) + self.bias
-           y_hat = self.sigmoid(z)
+           epsilon = 1e-15
+           y_hat = np.clip(self.sigmoid(z), epsilon, 1-epsilon)
            dw = (1/m) * np.dot(x.T, (y_hat - y))
            db = (1/m) * np.sum(y_hat - y)
            self.weights = self.weights_optimizer.update(self.weights, dw)

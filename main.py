@@ -1,9 +1,10 @@
 
-from get_data import save_json_from_url, json_to_dataframe
-from process_data import unpack_transposed_df_to_csv
-from stats import load_stats, compute_stats, save_plot
-from bot_analysis import detect_bots
-from prediction_pipeline import load_game_data, preprocess_data, train_model, save_pipeline_artifacts
+from get_data import *
+from process_data import *
+from stats import *
+from activities_analysis import *
+from bot_analysis import *
+from prediction_pipeline import *
 from private import *
 from pathlib import Path
 
@@ -27,6 +28,15 @@ try:
         save_plot(results, mode, save_dir=PLOTS_DIR)
 except Exception as e:
     print("Stats analysis failed:", e)
+try:
+    df = load_activity_data(DATA_DIR /"activities_dailyActivities.csv")
+    activities = flatten_activities(df)
+    stats = compute_activity_stats(activities)
+    save_activity_stats(stats, "stats/activities_summary.json")
+    plot_activity_coins(activities, PLOTS_DIR/"activity_distribution.png")
+    plot_total_duration(activities, PLOTS_DIR/"total_duration_distribution.png")
+except Exception as e:
+    print("Activity analysis failed:", e)
 
 # Bot analysis
 try:
